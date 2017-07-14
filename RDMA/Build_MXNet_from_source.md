@@ -42,3 +42,14 @@ export PKG_CONFIG_PATH=$OPENCV_HOME/lib/pkgconfig:$PKG_CONFIG_PATH
 Just follow the [official installation guide](http://mxnet.io/get_started/install.html).
 
 There is also a [pdf format](appendix/Installing_MXNet_mxnet_documentation.pdf).
+
+Major steps are:
+
+1. Use `wget` to download and extract MXNet zip. Current stable release is [mxnet-0.10.0.zip](https://codeload.github.com/dmlc/mxnet/zip/v0.10.0). I don't recommend cloning the repo since it is too large.
+2. Build MXNet.
+
+```sh
+cd mxnet
+make -j $(nproc) USE_OPENCV=1 USE_BLAS=openblas
+```
+
