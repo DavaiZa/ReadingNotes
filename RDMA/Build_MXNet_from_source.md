@@ -53,3 +53,44 @@ cd mxnet
 make -j $(nproc) USE_OPENCV=1 USE_BLAS=openblas
 ```
 
+## Run MXNet on Multiple CPU/GPU's
+
+See [Run MXNet on Multiple CPU/GPUs with Data Parallelism](http://mxnet.io/how_to/multi_devices.html) for more details.
+
+Remember to enable the following switches:
+
+```
+USE_CPP_PACKAGE=1
+USE_DIST_KVSTORE=1
+DEBUG=1
+```
+
+## Plan B: If the host machine cannot access github files
+
+Due to some well-known reason in China, the host machine usually fails to `wget` some dependencies from GitHub CDN.
+
+For that, we may need to
+
+1. Find out the URLs from the output of `make`
+2. Download them via Thunder or sth. else.
+3. Upload these offline packages to the corresponding directories.
+4. Modify the makefile along with its dependencies.
+
+I have encountered a timeout problem when `wget`-ing from `https://raw.githubusercontent.com/mli/deps/master/build/*.tar.gz`. To avoid such problem, I've modified `ps-lite/make/deps.mk` so that the makefile only download the packages if they don't exist. 
+
+The code is as follows:
+
+```shell
+# protobuf
+PROTOBUF = ${DEPS_PATH}/include/google/protobuf/message.h
+${PROTOBUF}:
+	$(eval FILE=protobuf-2.5.0.tar.gz)
+	$(eval DIR=protobuf-2.5.0)
+	rm -rf $(DIR)
+	@if [ ! -f "$(FILE)" ]; then echo -e "\n\e[33mOffline package does not exist. Start downloading ...\e[0m\n" && $(WGET) $(URL)/$(FILE); fi
+	tar --no-same-owner -zxf $(FILE)
+	cd $(DIR) && export CFLAGS=-fPIC && export CXXFLAGS=-fPIC && ./configure -prefix=$(DEPS_PATH) && $(MAKE) && $(MAKE) install
+	rm -rf $(FILE) $(DIR)
+```
+
+NOTE: In general, the **current working directory** of a makefile is the directory where `makefile` or `Makefile` resides, even though it is run by another makefile. So, we should upload our offline packages to `ps-lite/` directory.
