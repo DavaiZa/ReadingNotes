@@ -10,7 +10,7 @@ For this part, I mainly referred to [OpenBlas#Installation-from-source](https://
 
 I mainly referred to this article: [Installation in Linux](http://docs.opencv.org/2.4/doc/tutorials/introduction/linux_install/linux_install.html).
 
-Also, a pdf version for this doc is provided [HERE](appendix/Installation in Linux - OpenCV 2.4.13.pdf)
+Also, a pdf version for this doc is provided [HERE](appendix/Installation_in_Linux-OpenCV_2.4.13.pdf)
 
 Some tricks to boost installation:
 
@@ -41,4 +41,15 @@ export PKG_CONFIG_PATH=$OPENCV_HOME/lib/pkgconfig:$PKG_CONFIG_PATH
 
 Just follow the [official installation guide](http://mxnet.io/get_started/install.html).
 
-There is also a [pdf format](appendix/Installing MXNet — mxnet documentation.pdf).
+There is also a [pdf format](appendix/Installing_MXNet_mxnet_documentation.pdf).
+
+Major steps are:
+
+1. Use `wget` to download and extract MXNet zip. Current stable release is [mxnet-0.10.0.zip](https://codeload.github.com/dmlc/mxnet/zip/v0.10.0). I don't recommend cloning the repo since it is too large.
+2. Build MXNet.
+
+```sh
+cd mxnet
+make -j $(nproc) USE_OPENCV=1 USE_BLAS=openblas
+```
+
