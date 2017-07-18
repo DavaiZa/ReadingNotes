@@ -37,7 +37,7 @@ export LIBRARY_PATH=$OPENBLAS_HOME/lib:$OPENCV_HOME/lib:$LIBRARY_PATH
 export PKG_CONFIG_PATH=$OPENCV_HOME/lib/pkgconfig:$PKG_CONFIG_PATH
 ```
 
-## Uh...Finally: Build MXNet from source
+## Step1: Build MXNet from source
 
 Just follow the [official installation guide](http://mxnet.io/get_started/install.html).
 
@@ -53,6 +53,45 @@ cd mxnet
 make -j $(nproc) USE_OPENCV=1 USE_BLAS=openblas
 ```
 
+## Step2: Install MXNet python package from source
+
+### 2.1 Deploy a `virtualenv` environment
+
+```shell
+cd ~
+virtualenv --no-site-packages venv
+vim .bash_profile
+```
+
+Append the following snippet to  `.bash_profile` and update my bash with it.
+
+```shell
+source $HOME/venv/bin/activate
+```
+
+After that, my command prompt begins with a `(venv)` prefix.
+
+### 2.2 Install MXNet
+
+```shell
+cd <mxnet_home>/python/
+pip install --upgrade pip                      # upgrade pip
+pip install -e .                               # -e equals --editable
+```
+
+### 2.3 Validate MXNet Installation
+
+```python
+>>> import mxnet as mx
+>>> a = mx.nd.ones((2, 3))
+>>> b = a * 2 + 1
+>>> b.asnumpy()
+array([[ 3.,  3.,  3.],
+       [ 3.,  3.,  3.]], dtype=float32)
+```
+
+
+
 ## Run MXNet on Multiple CPU/GPU's
 
 See [Run MXNet on Multiple CPU/GPUs with Data Parallelism](http://mxnet.io/how_to/multi_devices.html) for more details.
@@ -60,12 +99,10 @@ See [Run MXNet on Multiple CPU/GPUs with Data Parallelism](http://mxnet.io/how_t
 Remember to enable the following switches:
 
 ```
-USE_CPP_PACKAGE=1
 USE_DIST_KVSTORE=1
-DEBUG=1
 ```
 
-## Plan B: If the host machine cannot access github files
+## Appendix A: If the host machine cannot access github files
 
 Due to some well-known reason in China, the host machine usually fails to `wget` some dependencies from GitHub CDN.
 
@@ -94,3 +131,4 @@ ${PROTOBUF}:
 ```
 
 NOTE: In general, the **current working directory** of a makefile is the directory where `makefile` or `Makefile` resides, even though it is run by another makefile. So, we should upload our offline packages to `ps-lite/` directory.
+
