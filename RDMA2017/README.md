@@ -49,6 +49,20 @@
 5. [[J] Scaling Distributed Machine Learning with the Parameter Server](https://www.cs.cmu.edu/~muli/file/parameter_server_osdi14.pdf). 注意看Algorithm 1, 里面有ps-lite如何用来做分布式的随机梯度下降.
 6. [明矾队长的工作笔记](http://222.195.93.137/gitlab/lmf/grpc_rdma/blob/master/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95.docx) .
 
+## 1.3. RDMA & Infiniband
+
+### 1.3.x. 参考文献
+
+1. [Building an RDMA-Capable Application with IB Verbs](http://www.hpcadvisorycouncil.com/pdf/building-an-rdma-capable-application-with-ib-verbs.pdf)
+2. [RDMA Read and Write with IB Verbs](http://www.hpcadvisorycouncil.com/pdf/rdma-read-and-write-with-ib-verbs.pdf)
+3. [Basic Flow Control for RDMA Transfers](http://www.hpcadvisorycouncil.com/pdf/vendor_content/basic-flow-control-for-rdma-transfers.pdf)
+4. [RDMA Aware Programming User Manual](http://www.mellanox.com/related-docs/prod_software/RDMA_Aware_Programming_user_manual.pdf) 这可以说是RDMA的官方API文档
+5. [RDMA mojo : blog on RDMA technology and programming](http://www.rdmamojo.com/) RDMA创建者之一的博客
+
+### 1.3.x+1. 参考代码
+
+1. [Basic Flow Control for RDMA Transfers的代码](https://sites.google.com/a/bedeir.com/home/rdma-file-transfer.tar.gz). 另有[本地备份](appendix/rdma-file-trasfer.tar.gz). 
+
 # 2. 经验总结
 
 ## 2.1. 调试技巧
