@@ -1,10 +1,18 @@
 # The TODO list of 2017
 
-* Read and repeat [OpenBLAS and the Optimization of Matrix Multiplication](https://www.leiphone.com/news/201704/Puevv3ZWxn0heoEv.html). **`Due: 2017-9-30`**
-* Understand the principle of Winograd's Minimal Convolution Algorithm. **`Due: 2017-9-30`**
-* Understand the lost function of Logistic Regression. **`Due: 2017-9-30`**
-* Finish reading chapter 7 of *Linear Algebra and its Applications. 7ed* - Symmetric Matrices and Quadratic Forms. **`Due: 2017-9-30`**
-  * `2017-7-20` Finish Principal Axes Theorem
-* Review APUE. **`Due: 2017-12-31`**
-* Do CSAPP exercises & experiments. **`Due: 2017-12-31`**
-* ​
+## 2017-9-30截止的项目
+
+* 复现 [OpenBLAS and the Optimization of Matrix Multiplication](https://www.leiphone.com/news/201704/Puevv3ZWxn0heoEv.html).
+* 搞懂Winograd Minimal Convolution的原理.
+* 搞懂Logistic Regression的损失函数.
+* 读懂*Linear Algebra and its Applications. 5ed* 的第7章 - 对称矩阵和二次型. 
+  * `2017-7-20` 弄懂主轴定理.
+* 彻底搞懂Tomasulo算法的软硬件背景, 过程和效果.
+
+## 2018-1-1截止的项目
+
+* 复习APUE.
+* 做CSAPP的课后题和实验题.
+* 刷完《挑战程序设计竞赛》的样例代码.
+* 精读《计组：量化方法》
+
