@@ -51,6 +51,14 @@
 
 ## 1.3. RDMA & Infiniband
 
+### 1.3.1. RDMA编译相关
+
+需要链接这些库:
+
+```
+-lrdmacm -libverbs
+```
+
 ### 1.3.x. 参考文献
 
 1. [Building an RDMA-Capable Application with IB Verbs](http://www.hpcadvisorycouncil.com/pdf/building-an-rdma-capable-application-with-ib-verbs.pdf)
