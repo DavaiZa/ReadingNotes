@@ -27,3 +27,9 @@
 详见[bash编程之if-else条件判断](http://zhaochj.blog.51cto.com/368705/1315581).
 
 这个博客的排版很工整, 最重要的是, 空格和缩进完全正确. 例子也很生动.
+
+
+
+# Linux PS1变量配置
+
+http://liuhongjiang.github.io/tech/blog/2013/01/16/shell-prompting/
