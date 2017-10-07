@@ -1,6 +1,6 @@
 # The TODO list of 2017
 
-## 2017-9-30截止的项目
+## 2017-10-31截止的项目
 
 * 复现 [OpenBLAS and the Optimization of Matrix Multiplication](https://www.leiphone.com/news/201704/Puevv3ZWxn0heoEv.html).
 * 搞懂Winograd Minimal Convolution的原理.
