@@ -3,16 +3,9 @@
 ## 2017-10-31截止的项目
 
 * 复现 [OpenBLAS and the Optimization of Matrix Multiplication](https://www.leiphone.com/news/201704/Puevv3ZWxn0heoEv.html).
-* 搞懂Winograd Minimal Convolution的原理.
-* 搞懂Logistic Regression的损失函数.
-* 读懂*Linear Algebra and its Applications. 5ed* 的第7章 - 对称矩阵和二次型. 
-  * `2017-7-20` 弄懂主轴定理.
+* 西瓜书前7章.
 * 彻底搞懂Tomasulo算法的软硬件背景, 过程和效果. 此为《计组：量化方法》的一部分.
 * 重读《C专家编程》和《C++ Primer》
-
-## 2017-10-9
-
-* RDMA竞赛
 
 ## 2017-12-1截止的项目
 
@@ -24,6 +17,7 @@
 * 做CSAPP的课后题和实验题.
 * 刷完《挑战程序设计竞赛》的样例代码.
 * 精读《计组：量化方法》.
+* 西瓜书.
 
 
 ## 2018-1-20截止的项目
