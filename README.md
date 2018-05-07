@@ -2,7 +2,7 @@
 
 * Office 2016
 * Typora
-* MathType
+* AxMath
 
 # 使用字体
 
