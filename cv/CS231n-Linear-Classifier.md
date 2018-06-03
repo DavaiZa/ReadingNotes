@@ -178,7 +178,7 @@ $$
 
 别看$$\Delta$$和$$\lambda$$是两个参数, 实际上它俩控制着同一件事, 那就是平衡Data loss和Regularization loss. 而在学习的过程中, $$\Delta$$跟W成正比.
 
-## 2.2. Softmax与cross-entropy loss
+## 2.2. Cross-entropy loss与Softmax
 
 Softmax的前向和SVM的前向一样, 仍然是上面讲过的线性打分函数. 
 
@@ -195,4 +195,6 @@ $$
 除了每个训练样本的损失和SVM不同, 其他的损失是相同的. 也就是说, Softmax损失函数**也分为数据损失和正则损失两大项**. 形式如公式(3)~(5)所示.
 
 ### 2.2.1. 信息熵
+
+
 
